@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120131153335) do
+ActiveRecord::Schema.define(:version => 20120131154856) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -92,6 +92,14 @@ ActiveRecord::Schema.define(:version => 20120131153335) do
     t.integer "tag_id"
     t.integer "book_id"
   end
+
+  create_table "coleccions", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "coleccions", ["name"], :name => "index_coleccions_on_name", :unique => true
 
   create_table "editorials", :force => true do |t|
     t.string   "name"
