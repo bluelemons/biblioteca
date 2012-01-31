@@ -7,5 +7,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 # Create a default user
-AdminUser.create!(:email => 'admin@example.com', :password => 'password', :password_confirmation => 'password')
+AdminUser.find_or_create_by_email('admin@example.com', :password => 'password', :password_confirmation => 'password')
+
+Procedencia.find_or_create_by_name "Comprado"
+Procedencia.find_or_create_by_name "Donado"
 
