@@ -19,6 +19,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'cancan'
 gem 'jquery-rails'
 
 # To use debugger
@@ -28,4 +29,3 @@ gem 'pry'
 gem 'rails-i18n'
 
 gem 'activeadmin'
-
