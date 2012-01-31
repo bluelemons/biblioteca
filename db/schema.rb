@@ -109,7 +109,7 @@ ActiveRecord::Schema.define(:version => 20120131155544) do
 
   add_index "editorials", ["name"], :name => "index_editorials_on_name", :unique => true
 
-  create_table "procedencia", :force => true do |t|
+  create_table "procedencias", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
