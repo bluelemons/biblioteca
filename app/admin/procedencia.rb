@@ -1,3 +1,3 @@
-ActiveAdmin.register Procedencium do
-  
+ActiveAdmin.register Procedencia do
+
 end
