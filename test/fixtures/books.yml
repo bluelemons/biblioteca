@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  fecha_de_ingreso: 2012-01-31
+  titulo: MyString
+  editorial: 
+  edicion: MyString
+  asignatura: 
+  ubicacion: MyString
+  estanteria: MyString
+  coleccion: 
+  procedencia: 
+
+two:
+  fecha_de_ingreso: 2012-01-31
+  titulo: MyString
+  editorial: 
+  edicion: MyString
+  asignatura: 
+  ubicacion: MyString
+  estanteria: MyString
+  coleccion: 
+  procedencia: 

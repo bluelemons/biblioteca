@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120131144350) do
+ActiveRecord::Schema.define(:version => 20120131153335) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -45,5 +45,68 @@ ActiveRecord::Schema.define(:version => 20120131144350) do
 
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
+
+  create_table "asignaturas", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "asignaturas", ["name"], :name => "index_asignaturas_on_name", :unique => true
+
+  create_table "authors", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "authors", ["name"], :name => "index_authors_on_name", :unique => true
+
+  create_table "authors_books", :id => false, :force => true do |t|
+    t.integer "author_id"
+    t.integer "book_id"
+  end
+
+  create_table "books", :force => true do |t|
+    t.date     "fecha_de_ingreso"
+    t.string   "titulo"
+    t.integer  "editorial_id"
+    t.string   "edicion"
+    t.integer  "asignatura_id"
+    t.string   "ubicacion"
+    t.string   "estanteria"
+    t.integer  "coleccion_id"
+    t.integer  "procedencia_id"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  add_index "books", ["asignatura_id"], :name => "index_books_on_asignatura_id"
+  add_index "books", ["coleccion_id"], :name => "index_books_on_coleccion_id"
+  add_index "books", ["editorial_id"], :name => "index_books_on_editorial_id"
+  add_index "books", ["procedencia_id"], :name => "index_books_on_procedencia_id"
+  add_index "books", ["titulo"], :name => "index_books_on_titulo"
+  add_index "books", ["ubicacion", "estanteria"], :name => "index_books_on_ubicacion_and_estanteria", :unique => true
+
+  create_table "books_tags", :id => false, :force => true do |t|
+    t.integer "tag_id"
+    t.integer "book_id"
+  end
+
+  create_table "editorials", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "editorials", ["name"], :name => "index_editorials_on_name", :unique => true
+
+  create_table "tags", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "tags", ["name"], :name => "index_tags_on_name", :unique => true
 
 end
